@@ -18,6 +18,7 @@ class TestAbs(unittest.TestCase):
         self.browser.set_page_load_timeout(10)
         self.browser.get('http://suninjuly.github.io/registration2.html')
         # говорим Selenium проверять в течение 5 секунд, пока кнопка не станет кликабельной
+        self.browser.find_element_by_class_name("form-control second").send_keys("f")
         for elem in self.browser.find_elements_by_css_selector(".form-control"):
             elem.send_keys("f")
         self.browser.find_element_by_css_selector('button.btn.btn-default').click()
